@@ -1,4 +1,4 @@
-import { useState } from 'react'
+npm startimport { useState } from 'react'
 import FormVagas from '../../components/FormVagas'
 
 import Vaga from '../../components/Vaga'
@@ -104,8 +104,12 @@ const vagas = [
 const ListaVagas = () => {
   const [filtro, setFiltro] = useState<string>('')
 
+  const pesquisarVagas = (termo: string) => {
+    setFiltro(termo)
+  }
+
   const vagasFiltradas = vagas.filter(
-    (x) => x.titulo.toLocaleLowerCase().search(filtro) >= 0
+    (vaga) => vaga.titulo.toLocaleLowerCase().includes(filtro)
   )
 
   return (
@@ -117,15 +121,6 @@ const ListaVagas = () => {
         ))}
       </VagasGrid>
     </>
-  )
-            modalidade={vag.modalidade}
-            salarioMin={vag.salarioMin}
-            salarioMax={vag.salarioMax}
-            requisitos={vag.requisitos}
-          />
-        ))}
-      </ul>
-    </div>
   )
 }
 
