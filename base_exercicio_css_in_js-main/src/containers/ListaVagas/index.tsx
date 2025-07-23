@@ -1,4 +1,4 @@
-npm startimport { useState } from 'react'
+import { useState } from 'react'
 import FormVagas from '../../components/FormVagas'
 
 import Vaga from '../../components/Vaga'
